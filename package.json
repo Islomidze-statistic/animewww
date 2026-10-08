@@ -1,0 +1,9 @@
+{
+  "name": "anime-dream-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ANIME 夢 — anime catalog with themes, RU/EN, 3D cards, Blue Lock and JoJo pages",
+  "scripts": {
+    "dev": "echo \"This version uses the Tailwind CDN, so no build step is required.\""
+  }
+}

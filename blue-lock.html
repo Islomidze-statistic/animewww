@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Blue Lock — ANIME 夢</title><link rel="stylesheet" href="style.css">  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          boxShadow: {
+            anime: '0 0 35px var(--glow)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="special blue-page">
+<header class="topbar glass flex items-center"><a class="brand" href="index.html">ANIME <span>夢</span></a><nav><a href="index.html">Главная</a><a class="active" href="blue-lock.html">Blue Lock</a><a href="jojo.html">JoJo</a></nav><button class="icon-btn" onclick="toggleLang()">EN</button></header>
+<main class="special-main mx-auto">
+<section class="special-hero glass">
+  <div><span class="pill">⚽ BLUE LOCK</span><h1>Blue Lock</h1>
+  <p data-ru="Чтобы создать лучшего нападающего Японии, триста молодых форвардов запирают в особом тренировочном проекте. Победит тот, кто сможет поставить собственный гол выше всего."
+     data-en="To create Japan's greatest striker, 300 young forwards enter the special Blue Lock project. The winner is the one who can put his own goal above everything.">Чтобы создать лучшего нападающего Японии, триста молодых форвардов запирают в особом тренировочном проекте.</p>
+  <div class="special-actions"><button class="primary">▶ Смотреть</button><button class="round">＋</button></div></div>
+  <div class="special-orb"><div class="ball">⚽</div></div>
+</section>
+<section class="section"><div class="section-head"><h2>Игроки</h2></div><div class="player-grid" id="bluePlayers"></div></section>
+<section class="info glass"><h2>О проекте</h2><p>Интерактивная страница в стиле спортивного интерфейса: карточки игроков, рейтинг, позиции, 3D-наведение и смена темы.</p></section>
+</main>
+<footer class="text-center">ANIME 夢 · Blue Lock special page · 2026</footer>
+<script src="anime-data.js"></script><script src="app.js"></script>
+</body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>JoJo — ANIME 夢</title><link rel="stylesheet" href="style.css">  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          boxShadow: {
+            anime: '0 0 35px var(--glow)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="special jojo-page">
+<header class="topbar glass flex items-center"><a class="brand" href="index.html">ANIME <span>夢</span></a><nav><a href="index.html">Главная</a><a href="blue-lock.html">Blue Lock</a><a class="active" href="jojo.html">JoJo</a></nav><button class="icon-btn" onclick="toggleLang()">EN</button></header>
+<main class="special-main mx-auto">
+<section class="special-hero glass">
+  <div><span class="pill">★ JOJO</span><h1>JoJo's Bizarre Adventure</h1>
+  <p data-ru="История семьи Джостаров, их необычных приключений, противостояния с могущественными врагами и легендарных стендов."
+     data-en="The story of the Joestar family, their bizarre adventures, powerful enemies, and legendary Stands.">История семьи Джостаров, их необычных приключений, противостояния с могущественными врагами и легендарных стендов.</p>
+  <div class="special-actions"><button class="primary">▶ Смотреть</button><button class="round">＋</button></div></div>
+  <div class="stand-3d"><div class="stand-core">JO<br>JO</div></div>
+</section>
+<section class="section"><div class="section-head"><h2>Части и герои</h2></div><div class="player-grid" id="jojoParts"></div></section>
+<section class="info glass"><h2>О мире JoJo</h2><p>Отдельный стиль с фиолетово-золотым неоном, карточками персонажей и 3D-эффектом Stand.</p></section>
+</main>
+<footer class="text-center">ANIME 夢 · JoJo special page · 2026</footer>
+<script src="anime-data.js"></script><script src="app.js"></script>
+</body></html>

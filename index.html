@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANIME 夢 — Anime Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          boxShadow: {
+            anime: '0 0 35px var(--glow)'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar glass flex items-center">
+    <a class="brand" href="index.html">ANIME <span>夢</span></a>
+    <div class="search"><span>⌕</span><input id="search" placeholder="Поиск аниме..." /></div>
+    <nav>
+      <a class="active" href="index.html" data-i18n="home">Главная</a>
+      <a href="#catalog" data-i18n="catalog">Каталог</a>
+      <a href="#genres" data-i18n="ongoing">Онгоинги</a>
+      <a href="#favorites" data-i18n="favorites">Избранное</a>
+      <a href="blue-lock.html">Blue Lock</a>
+      <a href="jojo.html">JoJo</a>
+    </nav>
+    <button class="icon-btn" id="langBtn">EN</button>
+    <button class="avatar">A</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar glass">
+      <div class="side-group">
+        <a class="side-active" href="#"><span>⌂</span><b data-i18n="home">Главная</b></a>
+        <a href="#popular"><span>♨</span><b data-i18n="popular">Популярное</b></a>
+        <a href="#new"><span>◷</span><b data-i18n="new">Новинки</b></a>
+        <a href="#catalog"><span>▦</span><b data-i18n="catalog">Каталог</b></a>
+        <a href="blue-lock.html"><span>⚽</span><b>Blue Lock</b></a>
+        <a href="jojo.html"><span>★</span><b>JoJo</b></a>
+      </div>
+      <div class="side-title" data-i18n="genres">ЖАНРЫ</div>
+      <div class="genres" id="genres"></div>
+      <div class="side-quote" data-i18n="quote">«Аниме — это не просто мультфильмы. Это целый мир эмоций...»</div>
+    </aside>
+
+    <main>
+      <section class="hero glass">
+        <div class="hero-copy">
+          <span class="pill">🔥 <span data-i18n="featured">В центре внимания</span></span>
+          <h1 id="heroTitle">Токийский гуль</h1>
+          <p id="heroDesc">Канеки Кэн — обычный студент, чья жизнь меняется после встречи с гулем. Теперь он живёт между двумя мирами.</p>
+          <div class="meta"><span>★ 8.1/10</span><span>2014</span><span>12+</span><span>Сёнэн · Ужасы · Драма</span></div>
+          <div class="actions"><button class="primary" onclick="openAnime('Tokyo Ghoul')">▶ <span data-i18n="watch">Смотреть</span></button><button class="round">＋</button></div>
+        </div>
+        <div class="hero-art" id="heroArt"></div>
+        <div class="hero-dots"><i></i><i class="on"></i><i></i></div>
+      </section>
+
+      <section id="popular" class="section">
+        <div class="section-head"><h2>🔥 <span data-i18n="popular">Популярное</span></h2><a href="#catalog" data-i18n="all">Смотреть все →</a></div>
+        <div class="anime-grid" id="popularGrid"></div>
+      </section>
+
+      <section id="new" class="section">
+        <div class="section-head"><h2>🆕 <span data-i18n="new">Новинки</span></h2><a href="#catalog" data-i18n="all">Смотреть все →</a></div>
+        <div class="anime-grid" id="newGrid"></div>
+      </section>
+
+      <section id="favorites" class="section favorites-section">
+        <div class="section-head"><h2>♥ <span data-i18n="favorites">Избранное</span></h2><span class="fav-hint">Сохраняется в браузере</span></div>
+        <div class="anime-grid" id="favoritesGrid"></div>
+      </section>
+
+      <section id="catalog" class="section catalog-section">
+        <div class="section-head"><h2>▦ <span data-i18n="catalog">Каталог</span></h2></div>
+        <div class="filters">
+          <select id="genreFilter"><option value="all">Все жанры</option></select>
+          <select id="sort"><option value="rating">Рейтинг</option><option value="year">Год</option><option value="name">Название</option></select>
+        </div>
+        <div class="anime-grid" id="catalogGrid"></div>
+      </section>
+    </main>
+
+    <aside class="rightbar glass">
+      <div class="login-panel">
+        <div class="mini-brand">ANIME <span>夢</span></div>
+        <p data-i18n="motto">Смотри. Вдохновляйся. Живи.</p>
+        <h3 data-i18n="login">Вход</h3>
+        <label>Email или логин<input placeholder="Введите ваш email или логин"></label>
+        <label>Пароль<input type="password" placeholder="Введите пароль"></label>
+        <label class="remember"><input type="checkbox"> <span data-i18n="remember">Запомнить меня</span></label>
+        <button class="primary full" data-i18n="enter">Войти</button>
+        <div class="or">или</div>
+        <div class="socials"><button>G</button><button>VK</button><button>➤</button></div>
+        <small data-i18n="noaccount">Нет аккаунта?</small> <a href="#" data-i18n="register">Зарегистрироваться</a>
+      </div>
+      <div class="theme-box">
+        <h3 data-i18n="theme">Выбор темы</h3>
+        <p data-i18n="themeHint">Выберите цвет оформления сайта</p>
+        <div class="theme-row">
+          <button data-theme="mono" title="Black & White"></button>
+          <button data-theme="red"></button><button data-theme="green"></button>
+          <button data-theme="yellow"></button><button data-theme="pink"></button><button data-theme="purple"></button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card glass">
+      <button class="close" onclick="closeModal()">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="text-center">ANIME 夢 · <span data-i18n="footer">Сделано для любителей аниме</span> · 2026</footer>
+  <script src="anime-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
